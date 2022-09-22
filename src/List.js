@@ -32,6 +32,15 @@ const List = ({ theme, setTheme }) => {
     localStorage.setItem("list", JSON.stringify(list));
   });
 
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    setTheme(JSON.parse(localTheme));
+  }, [setTheme]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  });
+
   const themeHandler = () => {
     setTheme(!theme);
   };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./listitems.css";
 import Todos from "./Todos";
@@ -19,7 +19,7 @@ const ListItems = ({ list, setList, filter, setFilter }) => {
   };
 
   const clearTodos = () => {
-    setList([]);
+    setList(list.filter((todo) => todo.status === true));
   };
 
   const reorder = (list, startIndex, endIndex) => {
