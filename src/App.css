@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-wrapper {
+  height: 100vh;
+}
+
+.header-bg-container {
+  background-image: url(./images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 12rem 0;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 0 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-bg-container {
+    background-image: url(./images/bg-mobile-light.jpg);
+    background-size: cover;
+    padding: 8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header-bg-container {
+    background-size: contain;
+  }
+}
+
+/* dark mode*/
+
+.main-wrapper.dark {
+  background-color: hsl(235, 21%, 11%);
+}
+
+.main-wrapper.dark .header-bg-container {
+  background-image: url(./images/bg-desktop-dark.jpg);
+}
+
+@media screen and (max-width: 768px) {
+  .main-wrapper.dark .header-bg-container {
+    background-image: url(./images/bg-mobile-dark.jpg);
+  }
+}

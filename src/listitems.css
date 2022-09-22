@@ -1,0 +1,240 @@
+.list-items-container {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.list-items li {
+  border-bottom: 1px solid hsl(236, 33%, 92%);
+  padding: 20px 5px 20px 20px;
+  display: flex;
+  align-items: center;
+  color: hsl(235, 19%, 35%);
+  font-size: 18px;
+  position: relative;
+}
+
+.list-items li .cross-icon {
+  content: "";
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+.list-items li:hover .cross-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+li input[type="checkbox"] {
+  display: flex;
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid hsl(236, 33%, 92%);
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-image-slice: 1;
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: 0.2s ease-in-out;
+  appearance: none;
+}
+
+.list-items li input[type="checkbox"]:checked {
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+.list-items .not-completed-todo .circle-icon {
+  display: flex;
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid hsl(236, 33%, 92%);
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-image-slice: 1;
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.list-items .circle-icon:hover {
+  border: 1px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.list-items .completed-todo .circle-icon {
+  display: flex;
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid hsl(236, 33%, 92%);
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-image-slice: 1;
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+.list-items .completed-todo .circle-icon::after {
+  content: "";
+  position: absolute;
+  background-image: url(./images/icon-check.svg);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 11px;
+  height: 9px;
+}
+
+.list-items .todo-text {
+  cursor: pointer;
+}
+
+.completed-todo .todo-text {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}
+
+.user-cta-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px;
+}
+
+.user-cta-wrapper .item-counter {
+  color: hsl(236, 9%, 61%);
+  font-size: 14px;
+}
+
+.user-cta-wrapper .user-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: hsl(236, 9%, 61%);
+}
+
+.user-cta-wrapper .user-buttons .btn {
+  transition: 0.2s ease-in-out;
+}
+
+.user-cta-wrapper .user-buttons .btn:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.active-button {
+  color: hsl(220, 98%, 61%);
+}
+
+.user-cta-wrapper .clear-button {
+  color: hsl(236, 9%, 61%);
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.user-cta-wrapper .clear-button:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.mobile-user-buttons {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .list-items li {
+    font-size: 16px;
+  }
+
+  .list-items li .cross-icon {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .user-cta-wrapper .user-buttons {
+    display: none;
+  }
+
+  .mobile-user-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: hsl(236, 9%, 61%);
+    padding: 20px 60px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fff;
+  }
+}
+
+/* dark mode */
+
+.main-wrapper.dark .list-items-container {
+  background-color: hsl(235, 24%, 19%);
+}
+
+.main-wrapper.dark .list-items li {
+  border-color: hsl(233, 14%, 35%);
+}
+
+.main-wrapper.dark .list-items .not-completed-todo .circle-icon {
+  border: 1px solid hsl(233, 14%, 35%);
+  background-image: linear-gradient(#25273c, #25273c),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.main-wrapper.dark .list-items .not-completed-todo .circle-icon:hover {
+  background-image: linear-gradient(#25273c, #25273c),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-color: transparent;
+}
+
+.main-wrapper.dark .list-items .todo-text {
+  color: hsl(234, 39%, 85%);
+}
+.main-wrapper.dark .list-items .completed-todo .todo-text {
+  color: hsl(233, 14%, 35%);
+}
+
+.main-wrapper.dark .user-cta-wrapper .user-buttons {
+  color: hsl(233, 14%, 35%);
+}
+
+.main-wrapper.dark .user-cta-wrapper .user-buttons .btn:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+.main-wrapper.dark .user-cta-wrapper .clear-button:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+.main-wrapper.dark .mobile-user-buttons {
+  background-color: hsl(235, 24%, 19%);
+}
