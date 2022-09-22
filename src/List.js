@@ -25,21 +25,22 @@ const List = ({ theme, setTheme }) => {
 
   useEffect(() => {
     const localList = localStorage.getItem("list");
-    setList(JSON.parse(localList));
+    if (localList !== null) setList(JSON.parse(localList));
   }, []);
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
-  });
+  }, [list]);
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
     setTheme(JSON.parse(localTheme));
-  }, [setTheme]);
+    if (localTheme == null) setTheme(true);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(theme));
-  });
+  }, [theme]);
 
   const themeHandler = () => {
     setTheme(!theme);

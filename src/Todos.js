@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import cross from "./images/icon-cross.svg";
 
 const Todos = ({ title, todos, list, setList }) => {
-  // const [completedTodos, setCompletedTodos] = useState(false);
-
   const statusHandler = () => {
     setList(
       list.map((item) => {
